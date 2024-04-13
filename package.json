@@ -1,5 +1,5 @@
 {
-  "name": "scratch-ext",
+  "name": "DeeplX",
   "version": "1.0.0",
   "description": "Scaffolding for Javascript/Typescript Scratch extensions",
   "main": "dist/index.js",
@@ -12,10 +12,11 @@
     "build": "tsup",
     "build:turbowarp": "tsup && (npx prettier --config turbowarp/.prettierrc --parser acorn < dist/index.global.js) > dist/index.global.formatted.js",
     "format": "prettier ./src -c -w",
-    "lint:format": "prettier ./src -c"
+    "lint:format": "prettier ./src -c",
+    "fixall": "echo 格式化问题检查 && npm run format && echo 代码风格（eslint）检查 && npm run fix && echo 类型错误检查 && npm run lint:type"
   },
-  "author": "FurryR",
-  "license": "MIT",
+  "author": "多bug的啸天犬",
+  "license": "MPL-2.0",
   "devDependencies": {
     "@turbowarp/types": "^0.0.12",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
@@ -25,5 +26,9 @@
     "prettier": "^3.2.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "qiankun": "^2.10.16",
+    "ses": "^1.4.1"
   }
 }
