@@ -1,4 +1,4 @@
-name: Build on Push
+name: Build and Deploy on Push
 
 on:
   push:
@@ -18,3 +18,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Commit Dist Folder
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add dist
+          git commit -m "Build and deploy dist folder"
+          git push
