@@ -21,6 +21,8 @@ export default defineConfig({
 // Regarding legal issues: the DeeplX service is a localization of the deepl api and does not involve any illegal behavior.
 // 感谢 zhile 提供免费稳定的 DeeplX api！
 // Thank you zhile for providing a stable and reliable DeeplX api!  
+// 感谢 FurryR的拓展开发脚手架！
+// Thank you FurryR for the extension development scaffold!
 `
   },
   platform: 'browser',
