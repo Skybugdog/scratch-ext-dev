@@ -1,5 +1,5 @@
 {
-  "name": "DeeplX",
+  "name": "SkydogCookie",
   "version": "1.0.0",
   "description": "Scaffolding for Javascript/Typescript Scratch extensions",
   "main": "dist/index.js",
@@ -26,9 +26,5 @@
     "prettier": "^3.2.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
-  },
-  "dependencies": {
-    "qiankun": "^2.10.16",
-    "ses": "^1.4.1"
   }
 }
