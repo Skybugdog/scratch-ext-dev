@@ -12,14 +12,16 @@
       'SkydogCookie.newCookie':
         '创建或修改名为[name]的cookie值为[value]过期时间[time]天',
       'SkydogCookie.read': '读取名为[name]的cookie值',
-      'SkydogCookie.delete': '删除名为[name]的cookie'
+      'SkydogCookie.delete': '删除名为[name]的cookie',
+      'Skydog.newCookie.help':'⚠️注意：cookie大小限制在4KB以内'
     },
     en: {
       'SkydogCookie.name': "Skydog's Cookie",
       'SkydogCookie.newCookie':
         'Create or modify a cookie named [name] with value [value] and expiration time [time]',
       'SkydogCookie.read': 'Read the value of the cookie named [name]',
-      'SkydogCookie.delete': 'Delete the cookie named [name]'
+      'SkydogCookie.delete': 'Delete the cookie named [name]',
+      'Skydog.newCookie.help':'⚠️Note: Cookie size limit is 4KB'
     }
   })
   function i10n(id: string) {
@@ -41,6 +43,7 @@
         blockIconURI:SkydogCookieIconUrl,
         menuIconURI:SkydogCookieIconUrl,
         blocks: [
+          "---" + i10n("Skydog.newCookie.help"),
           {
             blockType: Scratch.BlockType.COMMAND,
             opcode: 'newCookie',
@@ -94,7 +97,12 @@
       const host = window.location.pathname
       // 加入前缀，防止读取非作品信息
       const cookie = `ccw_custom_cookie_${host}_${name}=${value};expires=${new Date(Date.now() + time * 24 * 60 * 60 * 1000).toUTCString()};path=/`
-      document.cookie = cookie
+      if (cookie.length > 4096) {
+        throw new Error("Cookie size exceeds 4k limit!");
+      }
+      else{
+        document.cookie = cookie;
+      }
     }
     read(args) {
       const name = args.name
