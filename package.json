@@ -1,5 +1,5 @@
 {
-  "name": "Ext",
+  "name": "BetterMsg",
   "version": "1.0.0",
   "description": "Scaffolding for Javascript/Typescript Scratch extensions",
   "main": "dist/index.js",
@@ -26,5 +26,10 @@
     "prettier": "^3.2.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "react": "^18.3.1",
+    "sweetalert2": "^11.6.13"
   }
 }
