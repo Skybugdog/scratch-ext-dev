@@ -231,7 +231,7 @@ import Swal from 'sweetalert2'
       if (anim === 'true') {
         console.log('with animation')
         Swal.fire({
-          title: title,
+          titleText: title,
           color: color,
           text: content,
           icon: type,
@@ -252,7 +252,7 @@ import Swal from 'sweetalert2'
         })
       } else {
         Swal.fire({
-          title: title,
+          titleText: title,
           color: color,
           text: content,
           icon: type
@@ -277,7 +277,7 @@ import Swal from 'sweetalert2'
       const time = args.time
       if (anim === 'true') {
         Swal.fire({
-          title: title,
+          titleText: title,
           color: color,
           text: content,
           icon: type,
@@ -299,7 +299,7 @@ import Swal from 'sweetalert2'
         })
       } else {
         Swal.fire({
-          title: title,
+          titleText: title,
           color: color,
           text: content,
           icon: type,
@@ -327,7 +327,7 @@ import Swal from 'sweetalert2'
         showConfirmButton: false,
         timer: time,
         type: type,
-        title: content,
+        titleText: content,
         color: color
       })
     }
@@ -337,7 +337,7 @@ import Swal from 'sweetalert2'
         window.alert = e => {
           Swal.fire({
             type: 'info',
-            title: e
+            titleText: e
           })
         }
       } else {
